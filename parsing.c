@@ -1,28 +1,28 @@
 #include "header.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	if (!s)
-		return ;
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
-}
+// void	ft_putstr_fd(char *s, int fd)
+// {
+// 	if (!s)
+// 		return ;
+// 	while (*s)
+// 	{
+// 		write(fd, s, 1);
+// 		s++;
+// 	}
+// }
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s)
-	{
-		i++;
-		s++;
-	}
-	return (i);
-}
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+//
+// 	i = 0;
+// 	while (*s)
+// 	{
+// 		i++;
+// 		s++;
+// 	}
+// 	return (i);
+// }
 
 int	ft_validity(char *str)
 {
@@ -129,12 +129,12 @@ int main(int argc, char **argv)
 		i++;
 	}
 	ft_repeats(arr, argc);
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("%d ", arr[i]);
-		i++;
-	}
-	printf("\n");
+	// i = 0;
+	// while (i < argc - 1)
+	// {
+	// 	printf("%d ", arr[i]);
+	// 	i++;
+	// }
+	// printf("\n");
 	ft_two_arrays(arr, argc);
 }

@@ -77,7 +77,7 @@ void	ft_create_node(int num, t_list	**node)
 	}
 }
 
-void	print_stack(t_list	*list)
+void	ft_print_stack(t_list	*list)
 {
 	while (list)
 	{
@@ -98,7 +98,11 @@ void	ft_lists(int *arr, int argc)
 		ft_create_node(arr[i], &node);
 		i++;
 	}
-	print_stack(node);
+	// ft_ra(&node, 1);
+	// ft_print_stack(node);
+	// printf("\n");
+	// ft_sa(&node, 1);
+	// ft_print_stack(node);
 }
 
 void	ft_two_arrays(int *arr, int argc)
