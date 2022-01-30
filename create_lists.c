@@ -40,18 +40,6 @@ void	ft_equality(int *arr1, int *arr2, int argc)
 	}
 }
 
-void	ft_lstadd_back01(t_list	*lst, t_list	*new)
-{
-	if (lst)
-	{
-		while ((lst)->next)	
-			(lst) = (lst)->next;
-		(lst)->next = new;
-	}
-	else
-		lst = new;
-}
-
 void	ft_create_node(int num, t_list	**node)
 {
 	t_list	*temp;
@@ -77,32 +65,45 @@ void	ft_create_node(int num, t_list	**node)
 	}
 }
 
-void	ft_print_stack(t_list	*list)
-{
-	while (list)
-	{
-		printf("%d ",list->data);
-		list = list->next;
-	}
-}
-
 void	ft_lists(int *arr, int argc)
 {
-	t_list *node;
+	t_list *node_a;
 	int		i;
 
 	i = 0;
-	node = NULL;
+	node_a = NULL;
 	while (i < argc - 1)
 	{
-		ft_create_node(arr[i], &node);
+		ft_create_node(arr[i], &node_a);
 		i++;
 	}
+	ft_radix_sort(&node_a, argc);
 	// ft_ra(&node, 1);
 	// ft_print_stack(node);
 	// printf("\n");
 	// ft_sa(&node, 1);
 	// ft_print_stack(node);
+}
+
+int	*ft_no_negative(int *arr, int *arr_sort, int argc)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < argc - 1)
+	{
+		while (j < argc - 1)
+		{
+			if (arr[i] == arr_sort[j])
+				arr[i] = j;
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (arr);
 }
 
 void	ft_two_arrays(int *arr, int argc)
@@ -118,8 +119,43 @@ void	ft_two_arrays(int *arr, int argc)
 	{
 		arr_sort[i] = arr[i];
 		i++;
-	} 
+	}
+
+	//
+	// printf("array:\n");
+	// i = 0;
+	// while (i < argc - 1)
+	// {
+	// 	printf("%d ", arr[i]);
+	// 	i++;
+	// }
+	// printf("\n");
+	//
+	
 	ft_sorted_arr(arr_sort, argc);
+
+	//
+	// printf("sorted array:\n");
+	// i = 0;
+	// while (i < argc - 1)
+	// {
+	// 	printf("%d ", arr_sort[i]);
+	// 	i++;
+	// }
+	// printf("\n");
+	//
+
 	ft_equality(arr, arr_sort, argc);
+	arr = ft_no_negative(arr, arr_sort, argc);
+
+	//printf("array without negative:\n");
+	// i = 0;
+	// while (i < argc - 1)
+	// {
+	// 	printf("%d ", arr[i]);
+	// 	i++;
+	// }
+	// printf("\n");
+	
 	ft_lists(arr, argc);
 }
