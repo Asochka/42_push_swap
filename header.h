@@ -29,14 +29,14 @@ void	ft_rra(t_list **lst, int k);
 void	ft_rrb(t_list **lst, int k);
 void	ft_rrr(t_list **lst_a, t_list **lst_b);
 void	ft_pa(t_list **lst_a, t_list **lst_b);
-void	ft_pa(t_list **lst_a, t_list **lst_b);
+void	ft_pb(t_list **lst_a, t_list **lst_b);
 
-void	ft_radix_sort(t_list **lst_a, int argc);
+void	ft_sort_push_swap(t_list **node_a, t_list **node_b, int len, int *arr);
 
 void	ft_print_stack(t_list	*list);
 void	ft_lstadd_back01(t_list	*lst, t_list	*new);
 void	ft_print_error(void);
 void	ft_lstclear(t_list	**lst);
-void	success_message(t_list	**lst);
+void	success_message(t_list	**lst1, t_list **lst2);
 
 #endif

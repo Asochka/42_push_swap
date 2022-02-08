@@ -12,7 +12,7 @@ void	ft_pa(t_list **lst_a, t_list **lst_b)
 	ft_putendl_fd("pa", 1);
 }
 
-void	ft_pa(t_list **lst_a, t_list **lst_b)
+void	ft_pb(t_list **lst_a, t_list **lst_b)
 {
 	t_list	*tmp;
 

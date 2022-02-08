@@ -68,21 +68,19 @@ void	ft_create_node(int num, t_list	**node)
 void	ft_lists(int *arr, int argc)
 {
 	t_list *node_a;
+	t_list *node_b;
 	int		i;
 
 	i = 0;
 	node_a = NULL;
+	node_b = NULL;
 	while (i < argc - 1)
 	{
+		//у меня создаетя список из индексов!!!! то есть массив теряет свою необходимость
 		ft_create_node(arr[i], &node_a);
 		i++;
 	}
-	ft_radix_sort(&node_a, argc);
-	// ft_ra(&node, 1);
-	// ft_print_stack(node);
-	// printf("\n");
-	// ft_sa(&node, 1);
-	// ft_print_stack(node);
+	ft_sort_push_swap(&node_a, &node_b, argc - 1, arr);
 }
 
 int	*ft_no_negative(int *arr, int *arr_sort, int argc)
@@ -114,15 +112,24 @@ void	ft_two_arrays(int *arr, int argc)
 	i = 0;
 	arr_sort = (int *)malloc((argc - 1) * sizeof(int));
 	if (!arr_sort)
-		exit(EXIT_FAILURE);
+	{
+		free(arr);
+		exit(EXIT_FAILURE);	
+	}
 	while (i < argc - 1)
 	{
 		arr_sort[i] = arr[i];
 		i++;
-	}
+	}	
+	ft_sorted_arr(arr_sort, argc);
+	ft_equality(arr, arr_sort, argc);
+	arr = ft_no_negative(arr, arr_sort, argc);
+	free(arr_sort);
+	ft_lists(arr, argc);
+}
 
-	//
-	// printf("array:\n");
+
+	//printf("array without negative:\n");
 	// i = 0;
 	// while (i < argc - 1)
 	// {
@@ -130,11 +137,8 @@ void	ft_two_arrays(int *arr, int argc)
 	// 	i++;
 	// }
 	// printf("\n");
-	//
-	
-	ft_sorted_arr(arr_sort, argc);
 
-	//
+		//
 	// printf("sorted array:\n");
 	// i = 0;
 	// while (i < argc - 1)
@@ -145,10 +149,8 @@ void	ft_two_arrays(int *arr, int argc)
 	// printf("\n");
 	//
 
-	ft_equality(arr, arr_sort, argc);
-	arr = ft_no_negative(arr, arr_sort, argc);
-
-	//printf("array without negative:\n");
+		//
+	// printf("array:\n");
 	// i = 0;
 	// while (i < argc - 1)
 	// {
@@ -156,6 +158,10 @@ void	ft_two_arrays(int *arr, int argc)
 	// 	i++;
 	// }
 	// printf("\n");
-	
-	ft_lists(arr, argc);
-}
+	//
+
+		// ft_ra(&node, 1);
+	// ft_print_stack(node);
+	// printf("\n");
+	// ft_sa(&node, 1);
+	// ft_print_stack(node);
