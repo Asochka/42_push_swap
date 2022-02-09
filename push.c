@@ -7,7 +7,9 @@ void	ft_pa(t_list **lst_a, t_list **lst_b)
 	if (!(*lst_b))
 		return ;
 	tmp = *lst_b;
-	*lst_b = (*lst_b)->next;
+	if ((*lst_b)->next)
+		*lst_b = (*lst_b)->next;
+	else (*lst_b) = NULL;
 	ft_lstadd_front(lst_a, tmp);
 	ft_putendl_fd("pa", 1);
 }

@@ -29,7 +29,7 @@ void	ft_rrb(t_list **lst, int k)
 	tmp = *lst;
 	size = ft_lstsize(tmp);
 	while (++i < size)
-		ft_ra(lst, 0);
+		ft_rb(lst, 0);
 	if (k == 1)
 		ft_putendl_fd("rrb", 1);
 }

@@ -63,7 +63,6 @@ int	ft_create_number(char *str)
 {
 	int	num;
 	int	i;
-
 	
 	i = 0;
 	num = 0;
@@ -76,7 +75,7 @@ int	ft_create_number(char *str)
 	return (num);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 	int	*arr;

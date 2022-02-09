@@ -2,26 +2,34 @@
 
 void	ft_sa(t_list	**lst, int k)
 {
-	int	tmp;
+	int	tmp_data;
+	int	tmp_index;
 
 	if (!*lst || !(*lst)->next)
 		return ;
-	tmp = (*lst)->data;
+	tmp_data = (*lst)->data;
+	tmp_index = (*lst)->index;
 	(*lst)->data = (*lst)->next->data;
-	(*lst)->next->data = tmp;
+	(*lst)->index = (*lst)->next->index;
+	(*lst)->next->data = tmp_data;
+	(*lst)->next->index = tmp_index;
 	if (k)
 		ft_putendl_fd("sa", 1);
 }
 
 void	ft_sb(t_list	**lst, int k)
 {
-	int	tmp;
+	int	tmp_data;
+	int	tmp_index;
 
 	if (!*lst || !(*lst)->next)
 		return ;
-	tmp = (*lst)->data;
+	tmp_data = (*lst)->data;
+	tmp_index = (*lst)->index;
 	(*lst)->data = (*lst)->next->data;
-	(*lst)->next->data = tmp;
+	(*lst)->index = (*lst)->next->index;
+	(*lst)->next->data = tmp_data;
+	(*lst)->next->index = tmp_index;
 	if (k)
 		ft_putendl_fd("sb", 1);
 }
