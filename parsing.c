@@ -42,11 +42,13 @@ void	ft_repeats(int *mass, int k)
 	int	i;
 	int	j;
 
+	if (k < 2)
+		ft_print_error();
 	i = 0;
 	j = 1;
-	while (i < k - 2)
+	while (i < k - 1)
 	{
-		while (j <  k - 1)
+		while (j <  k)
 		{
 			if (mass[i] == mass[j])
 			{
@@ -75,28 +77,30 @@ int	ft_create_number(char *str)
 	return (num);
 }
 
-int	main(int argc, char **argv)
+char	**ft_devide_sorting(int argc, char **argv, int *count)
 {
-	int	i;
-	int	*arr;
+	int		i;
+	char	*str;
+	char	*temp;
 
-	i = 1;
-	if (argc < 3)
-		ft_print_error();
-	arr = (int *)malloc((argc - 1) * sizeof(int));
-	if (!arr)
-		return (0);
-	while (i < argc)
+	if (argc > 2)
 	{
-		if (!(ft_validity(argv[i])) && !(ft_max_min(argv[i])))
-			arr[i - 1] = ft_create_number(argv[i]);
-		else 
+		i = 1;
+		str = ft_strjoin(argv[i], argv[i + 1]);
+		free(argv[i]);
+		free(argv[i + 1]);
+		i = i + 2;
+		while (i < argc)
 		{
-			free(arr);
-			ft_print_error();
+			temp = str;
+			str = ft_strjoin(str, argv[i]);
+			free(temp);
+			free(argv[i]);
+			i++;
 		}
-		i++;
+		*count = ft_count01(str, ' ');
+		return (ft_split(str, ' '));
 	}
-	ft_repeats(arr, argc);
-	ft_two_arrays(arr, argc);
+	*count = ft_count01(argv[1], ' ');
+	return (ft_split(argv[1], ' '));
 }

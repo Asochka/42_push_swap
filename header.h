@@ -8,6 +8,8 @@
 #include <stdio.h> //to delete
 void	ft_print_stack(t_list	*list);//to delete
 
+int	ft_count01(char const *s, char c);
+
 void	ft_sorted_arr(int *array, int argc);
 void	ft_equality(int *arr1, int *arr2, int argc);
 int		*ft_no_negative(int *arr, int *arr_sort, int argc);
@@ -20,6 +22,7 @@ int		ft_validity(char *str);
 int		ft_max_min(char *str);
 void	ft_repeats(int *mass, int k);
 int		ft_create_number(char *str);
+char	**ft_devide_sorting(int argc, char **argv, int *count);
 
 void	ft_small_sort(t_list **node);
 void	ft_middle_sort(t_list **node_a, t_list **node_b, int len);

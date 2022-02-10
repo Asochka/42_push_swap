@@ -12,6 +12,7 @@ SRC 			= 		sort_push_swap.c \
 						utils.c \
 						utils_for_sorting.c \
 						check_arrays.c	\
+						main.c \
 OBJ 			=		$(SRCS:%.c=%.o)
 CFLAGS 			= 		-Wall -Wextra -Werror
 CC				=		gcc

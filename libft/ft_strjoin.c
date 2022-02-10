@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// changed version with ' ';
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*newstr;
@@ -22,11 +22,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	newstr = (char *)malloc((len + 1) * sizeof(char));
+	newstr = (char *)malloc((len + 2) * sizeof(char));
 	if (!newstr)
 		return (NULL);
 	while (*s1 != '\0')
 		newstr[i++] = *(s1++);
+	newstr[i++] = ' ';
 	while (*s2 != '\0')
 		newstr[i++] = *(s2++);
 	newstr[i] = '\0';

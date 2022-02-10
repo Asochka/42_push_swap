@@ -101,7 +101,9 @@ void	ft_sort_push_swap(t_list **node_a, t_list **node_b, int len)
 		ft_big_sort(node_a, node_b, len, 15);
 	else
 		ft_big_sort(node_a, node_b, len, 30);
+	ft_print_stack(*node_a);
 	ft_lstclear(node_a);
+
 	//free(node_b); ??????
 	//eeeend!!
 }
