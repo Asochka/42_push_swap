@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   header.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:54:18 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:54:20 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HEADER_H
 # define HEADER_H
 
@@ -5,10 +17,7 @@
 # include <unistd.h>
 # include "libft/libft.h"
 
-#include <stdio.h> //to delete
-void	ft_print_stack(t_list	*list);//to delete
-
-int	ft_count01(char const *s, char c);
+int		ft_count01(char const *s, char c);
 
 void	ft_sorted_arr(int *array, int argc);
 void	ft_equality(int *arr1, int *arr2, int argc);

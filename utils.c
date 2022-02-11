@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:52:39 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:52:41 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	success_message(t_list	**lst1, t_list **lst2)
@@ -32,24 +44,10 @@ void	ft_lstadd_back01(t_list	*lst, t_list *new)
 {
 	if (lst)
 	{
-		while ((lst)->next)	
+		while ((lst)->next)
 			(lst) = (lst)->next;
 		(lst)->next = new;
 	}
 	else
 		lst = new;
-}
-
-void	ft_print_stack(t_list	*list)
-{
-	t_list *temp;
-
-	temp = list;
-	while (temp)
-	{
-		printf("data:  %d    ",temp->data);
-		printf("index: %d    ",temp->index);
-		printf("\n");
-		temp = temp->next;
-	}
 }

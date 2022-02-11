@@ -1,8 +1,7 @@
 NAME			=		push_swap
 LIBFT_PATH		=		libft/
 LIBFT			=		$(LIBFT_PATH)libft.a
-SRC_PATH		=		src/
-SRC 			= 		sort_push_swap.c \
+SRCS 			= 		sort_push_swap.c \
 						create_lists.c \
 						parsing.c \
 						push.c \
@@ -12,7 +11,7 @@ SRC 			= 		sort_push_swap.c \
 						utils.c \
 						utils_for_sorting.c \
 						check_arrays.c	\
-						main.c \
+						main.c 
 OBJ 			=		$(SRCS:%.c=%.o)
 CFLAGS 			= 		-Wall -Wextra -Werror
 CC				=		gcc

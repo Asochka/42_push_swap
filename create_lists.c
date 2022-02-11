@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_lists.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:54:25 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:54:26 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	ft_create_node(int num, int ind, t_list **node)
@@ -57,7 +69,7 @@ void	ft_two_arrays(int *arr, int argc)
 	if (!arr_sort)
 	{
 		free(arr);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 	}
 	while (i < argc - 1)
 	{

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_push_swap.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:53:07 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:53:09 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	ft_small_sort(t_list **node)
@@ -6,9 +18,11 @@ void	ft_small_sort(t_list **node)
 	{
 		if ((*node)->data < (*node)->next->data)
 			ft_rra(node, 1);
-		else if (((*node)->data == ft_max_data(*node)) && ((*node)->next->data == ft_min_data(*node)))
+		else if (((*node)->data == ft_max_data(*node)) && \
+		((*node)->next->data == ft_min_data(*node)))
 			ft_ra(node, 1);
-		else ft_sa(node, 1);
+		else
+			ft_sa(node, 1);
 	}
 }
 
@@ -24,12 +38,13 @@ void	ft_middle_sort(t_list **node_a, t_list **node_b, int len)
 			ft_pb(node_a, node_b);
 			count--;
 		}
-		else ft_ra(node_a, 1);
+		else
+			ft_ra(node_a, 1);
 	}
 	ft_small_sort(node_a);
 	while (*node_b)
 	{
- 		if ((*node_b)->index == 0)                                   
+		if ((*node_b)->index == 0)
 			ft_pa(node_a, node_b);
 		else if ((*node_b)->index == len - 1)
 		{
@@ -101,9 +116,5 @@ void	ft_sort_push_swap(t_list **node_a, t_list **node_b, int len)
 		ft_big_sort(node_a, node_b, len, 15);
 	else
 		ft_big_sort(node_a, node_b, len, 30);
-	ft_print_stack(*node_a);
 	ft_lstclear(node_a);
-
-	//free(node_b); ??????
-	//eeeend!!
 }

@@ -108,6 +108,5 @@ char	**ft_split(char const *s, char c)
 	if (!(split))
 		return (NULL);
 	split = ft_make_split(s, count, c, split);
-	//free(s);//add??
 	return (split);
 }

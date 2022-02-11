@@ -1,6 +1,0 @@
-gcc main.c libft/ft_split.c libft/ft_strjoin.c libft/ft_putendl_fd.c libft/ft_putstr_fd.c libft/ft_lstsize.c libft/ft_lstlast.c libft/ft_lstadd_front.c libft/ft_strlen.c sort_push_swap.c create_lists.c parsing.c push.c rev_rotate.c rotate.c swap.c utils.c utils_for_sorting.c check_arrays.c
-
-leaks --atExit -- ./a.out
-cheaker
-normibitchka
-bonus

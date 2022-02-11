@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:53:18 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:53:20 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	ft_ra(t_list **lst_a, int k)
@@ -5,7 +17,7 @@ void	ft_ra(t_list **lst_a, int k)
 	t_list	*tmp;
 	int		tmp_data;
 	int		tmp_index;
-	
+
 	if (!*lst_a || !(*lst_a)->next)
 		return ;
 	tmp = (*lst_a);
@@ -28,7 +40,7 @@ void	ft_rb(t_list **lst_b, int k)
 	t_list	*tmp;
 	int		tmp_data;
 	int		tmp_index;
-	
+
 	if (!*lst_b || !(*lst_b)->next)
 		return ;
 	tmp = (*lst_b);

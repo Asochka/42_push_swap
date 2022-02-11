@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arrays.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:54:35 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:54:37 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	ft_sorted_arr(int *array, int argc)
@@ -53,7 +65,7 @@ int	*ft_no_negative(int *arr, int *arr_sort, int argc)
 	{
 		free(arr);
 		free(arr_sort);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 	}
 	while (i < argc - 1)
 	{

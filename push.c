@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:53:37 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:53:39 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	ft_pa(t_list **lst_a, t_list **lst_b)
@@ -9,7 +21,8 @@ void	ft_pa(t_list **lst_a, t_list **lst_b)
 	tmp = *lst_b;
 	if ((*lst_b)->next)
 		*lst_b = (*lst_b)->next;
-	else (*lst_b) = NULL;
+	else
+		(*lst_b) = NULL;
 	ft_lstadd_front(lst_a, tmp);
 	ft_putendl_fd("pa", 1);
 }

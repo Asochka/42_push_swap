@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smana <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 15:54:05 by smana             #+#    #+#             */
+/*   Updated: 2022/02/11 15:54:07 by smana            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 int	ft_count01(char const *s, char c)
@@ -42,22 +54,13 @@ int	main(int argc, char **argv)
 	{
 		if (!(ft_validity(mass_str[i])) && !(ft_max_min(mass_str[i])))
 			arr[i] = ft_create_number(mass_str[i]);
-		else 
+		else
 		{
 			free(arr);
 			ft_print_error();
 		}
 		i++;
 	}
-///////////
-	// printf("count: %d\n", count);
-	// i = 0;
-	// while (i < count)
-	// {
-	// 	printf("arr[%d] %d\n", i, arr[i]);
-	// 	i++;
-	// }
-//////////
 	ft_repeats(arr, count);
 	ft_two_arrays(arr, count + 1);
 }
