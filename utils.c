@@ -14,8 +14,10 @@
 
 void	success_message(t_list	**lst1, t_list **lst2)
 {
-	ft_lstclear(lst1);
-	ft_lstclear(lst2);
+	if (lst1)
+		ft_lstclear(lst1);
+	if (lst2)
+		ft_lstclear(lst2);
 	exit(EXIT_SUCCESS);
 }
 
