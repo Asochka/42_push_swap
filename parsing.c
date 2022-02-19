@@ -21,6 +21,8 @@ int	ft_validity(char *str)
 		i++;
 	while (str[i] > 47 && str[i] < 58)
 		i++;
+	if (str[0] == '-' && i == 1)
+		return (1);
 	if (ft_strlen(str) == i)
 		return (0);
 	else
@@ -57,11 +59,14 @@ void	ft_repeats(int *mass, int k)
 	int	j;
 
 	if (k < 2)
+	{
+		free(mass);
 		exit(EXIT_FAILURE);
+	}
 	i = 0;
-	j = 1;
 	while (i < (k - 1))
 	{
+		j = i + 1;
 		while (j < k)
 		{
 			if (mass[i] == mass[j])

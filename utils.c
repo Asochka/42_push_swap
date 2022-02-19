@@ -38,7 +38,7 @@ void	ft_lstclear(t_list	**lst)
 
 void	ft_print_error(void)
 {
-	ft_putstr_fd("error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
 

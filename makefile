@@ -67,7 +67,7 @@ $(LIBFT)		: 		$(LIBFT_SRC) $(LIBFT_HEADER) $(LIBFT_OBJS)
 $(NAME)		 	:		$(OBJ) $(LIBFT)
 						$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
 
-%.o 			: 		%.c
+%.o 			: 		%.c	makefile 
 						$(CC) $(CFLAGS) -c $< -o $@
 
 clean 			: 

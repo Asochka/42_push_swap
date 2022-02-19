@@ -37,6 +37,19 @@ int	ft_count01(char const *s, char c)
 	return (count);
 }
 
+void	ft_clean_mass_str(char **mass_str)
+{
+	int	i;
+
+	i = 0;
+	if (mass_str)
+	{
+		while (mass_str[i])
+			free(mass_str[i++]);
+		free(mass_str);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -56,11 +69,13 @@ int	main(int argc, char **argv)
 			arr[i] = ft_create_number(mass_str[i]);
 		else
 		{
+			ft_clean_mass_str(mass_str);
 			free(arr);
 			ft_print_error();
 		}
 		i++;
 	}
+	ft_clean_mass_str(mass_str);
 	ft_repeats(arr, count);
 	ft_two_arrays(arr, count + 1);
 }
