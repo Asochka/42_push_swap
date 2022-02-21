@@ -37,7 +37,7 @@ int	ft_count01(char const *s, char c)
 	return (count);
 }
 
-void	ft_clean_mass_str(char **mass_str)
+void	ft_clean_mass_str(char **mass_str, int *arr)
 {
 	int	i;
 
@@ -47,6 +47,26 @@ void	ft_clean_mass_str(char **mass_str)
 		while (mass_str[i])
 			free(mass_str[i++]);
 		free(mass_str);
+	}
+	if (arr)
+		free (arr);
+}
+
+void	ft_cicle_for_arr(int count, char **mass_str, int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		if (!(ft_validity(mass_str[i])) && !(ft_max_min(mass_str[i])))
+			arr[i] = ft_create_number(mass_str[i]);
+		else
+		{
+			ft_clean_mass_str(mass_str, arr);
+			ft_print_error();
+		}
+		i++;
 	}
 }
 
@@ -59,23 +79,14 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	count = 0;
+	if (argc == 1)
+		return (0);
 	arr = (int *)malloc((argc - 1) * sizeof(int));
 	if (!arr)
 		return (0);
 	mass_str = ft_devide_sorting(argc, argv, &count);
-	while (i < count)
-	{
-		if (!(ft_validity(mass_str[i])) && !(ft_max_min(mass_str[i])))
-			arr[i] = ft_create_number(mass_str[i]);
-		else
-		{
-			ft_clean_mass_str(mass_str);
-			free(arr);
-			ft_print_error();
-		}
-		i++;
-	}
-	ft_clean_mass_str(mass_str);
+	ft_cicle_for_arr(count, mass_str, arr);
+	ft_clean_mass_str(mass_str, NULL);
 	ft_repeats(arr, count);
 	ft_two_arrays(arr, count + 1);
 }

@@ -18,6 +18,8 @@
 # include "libft/libft.h"
 
 int		ft_count01(char const *s, char c);
+void	ft_cicle_for_arr(int count, char **mass_str, int *arr);
+void	ft_clean_mass_str(char **mass_str, int *arr);
 
 void	ft_sorted_arr(int *array, int argc);
 void	ft_equality(int *arr1, int *arr2, int argc);
